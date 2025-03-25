@@ -1,6 +1,7 @@
 # PICOCALC-micropython
 
 **Hardware:** WalnutPi-Pico
+
 **Usage:**
 
 1. Flash the firmware from the `firmware` folder to the ESP32-S3.
