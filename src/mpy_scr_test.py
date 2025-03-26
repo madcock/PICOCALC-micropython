@@ -1,15 +1,18 @@
-"""ILI9488 demo (fonts)."""
-from time import sleep
-from ili9488 import Display, color565
-from machine import Pin, SPI
-import random
+from machine import SoftI2C,Pin,UART,Timer,SPI
+import time
+from utils.drivers import KEYBOARD
+from utils.drivers import SCREEN
+from utils.fbconsole import FBConsole
+import utils.dos_font as font
+import utils.settings as setting
+import utils.color as color
+import os
+import st7789
 
-def test():
-    """Test code."""
-    # Baud rate of 60000000 seems about the max
-    spi = SPI(1, baudrate=60000000, sck=Pin(10), mosi=Pin(11))
-    display = Display(spi, dc=Pin(14), cs=Pin(13), rst=Pin(15))
-    display.draw_circle(100, 100,20, color565(0, 255, 0))
+set_dic=setting.load_setting()
+NAME=set_dic['OWNER']
 
-
-test()
+screen=SCREEN(320,320)
+kb=KEYBOARD()
+screen.tft.jpg('logo.jpg',0,40)
+screen.tft.write(font,'screen test',0,0)
