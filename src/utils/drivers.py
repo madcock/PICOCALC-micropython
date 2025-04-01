@@ -68,6 +68,8 @@ class KEYBOARD():
     def check_key(self):
         data = self.i2c.readfrom_mem(31, 0x09,2)
         return data
+    
+
             
 
             

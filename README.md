@@ -1,5 +1,17 @@
 # PICOCALC-micropython
 
+#### V-0.0.2 2025-04-01
+
+- Added SD card detection and mounting functionality. If mounted successfully, it is recognized as the `sd` folder in the root directory.
+
+#### V-0.0.1 2025-03-27
+
+- Added the `mpy_scr_test.py` file to test whether the screen is working properly.
+
+------
+
+
+
 **Hardware:** WalnutPi-Pico
 
 **Usage:**

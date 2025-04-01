@@ -15,12 +15,25 @@ screen=SCREEN(320,320)
 kb=KEYBOARD()
 screen.tft.jpg('logo.jpg',0,40)
 time.sleep(1)
+
+import machine, sdcard, os
+from machine import SPI,Pin
+spitf=SPI(baudrate=2000000, sck=Pin(4), mosi=Pin(5),miso=Pin(1))
+
 theme=color.COLOR_CANDY
 scr = FBConsole(screen,bg_color=theme['bg'],fg_color=theme['font'])
-os.dupterm(scr)   
+os.dupterm(scr)
+
 print('MPY CONSOLE ON PICOCALC by jd3096')
-print('V1.01')
+print('V1.02')
 print('WELCOME! '+NAME)
+try:
+    tf = sdcard.SDCard(spitf,Pin(2))
+    os.mount(tf, '/sd')
+    os.listdir('/')
+    print("LOAD SDCARD as '/sd'")
+except:
+    print('NO SDARD')
 time.sleep(0.5)
 
 def check_key(t):
