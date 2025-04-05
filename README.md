@@ -1,3 +1,6 @@
+This fork includes working pinout definitions for the Waveshare ESP32-S3-Pico.
+https://www.waveshare.com/wiki/ESP32-S3-Pico
+
 # PICOCALC-micropython
 
 #### V-0.0.2 2025-04-01

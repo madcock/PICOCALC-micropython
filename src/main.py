@@ -18,7 +18,7 @@ time.sleep(1)
 
 import machine, sdcard, os
 from machine import SPI,Pin
-spitf=SPI(baudrate=2000000, sck=Pin(4), mosi=Pin(5),miso=Pin(1))
+spitf=SPI(baudrate=2000000, sck=Pin(1), mosi=Pin(2),miso=Pin(42))
 
 theme=color.COLOR_CANDY
 scr = FBConsole(screen,bg_color=theme['bg'],fg_color=theme['font'])
@@ -28,7 +28,7 @@ print('MPY CONSOLE ON PICOCALC by jd3096')
 print('V1.02')
 print('WELCOME! '+NAME)
 try:
-    tf = sdcard.SDCard(spitf,Pin(2))
+    tf = sdcard.SDCard(spitf,Pin(41))
     os.mount(tf, '/sd')
     os.listdir('/')
     print("LOAD SDCARD as '/sd'")

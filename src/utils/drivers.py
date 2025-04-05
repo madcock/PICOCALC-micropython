@@ -39,12 +39,12 @@ class SCREEN():
         ]
 
         self.tft=st7789.ST7789(
-        SPI(1, baudrate=40000000, sck=Pin(37), mosi=Pin(38)),
+        SPI(1, baudrate=40000000, sck=Pin(35), mosi=Pin(36)),
         320,
         320,
-        cs=Pin(40, Pin.OUT),
-        dc=Pin(41, Pin.OUT),
-        reset=Pin(42,Pin.OUT),
+        cs=Pin(38, Pin.OUT),
+        dc=Pin(39, Pin.OUT),
+        reset=Pin(40,Pin.OUT),
         custom_init=custom_init,
         rotation=2,
         color_order=st7789.RGB,
@@ -61,8 +61,8 @@ import time
 
 class KEYBOARD():
     def __init__(self):
-        scp=Pin(34,Pin.IN,Pin.PULL_UP)
-        sdp=Pin(21,Pin.IN,Pin.PULL_UP)
+        scp=Pin(18,Pin.IN,Pin.PULL_UP)
+        sdp=Pin(17,Pin.IN,Pin.PULL_UP)
         self.i2c = I2C(1, scl=scp, sda=sdp, freq=10000)
 
     def check_key(self):

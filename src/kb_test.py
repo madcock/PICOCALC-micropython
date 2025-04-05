@@ -5,8 +5,8 @@ import time
 I2C_SDA = 6   # 根据你的连接修改
 I2C_SCL = 7   # 根据你的连接修改
 I2C_ADDR = 31
-scp=Pin(34,Pin.IN,Pin.PULL_UP)
-sdp=Pin(21,Pin.IN,Pin.PULL_UP)
+scp=Pin(18,Pin.IN,Pin.PULL_UP)
+sdp=Pin(17,Pin.IN,Pin.PULL_UP)
 
 # 创建 I2C 对象
 i2c = I2C(1, scl=scp, sda=sdp, freq=10000)  # 10kHz 与 Arduino 代码匹配
